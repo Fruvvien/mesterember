@@ -22,11 +22,11 @@ namespace mesterember
             {
                 if (!FoglaltNapok1[i])
                 {
-                    foglaltnap += "\n\tszabad";
+                    foglaltnap += $"\n\t{i} szabad";
                 }
                 else
                 {
-                    foglaltnap += "\n\tfoglalt";
+                    foglaltnap += $"\n\t{i} foglalt";
                 }
             }
             return $"{Nev1} {NapiDij1} {Tapasztalat} {foglaltnap}";
