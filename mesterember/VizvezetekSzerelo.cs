@@ -17,7 +17,19 @@ namespace mesterember
 
         public override string ToString()
         {
-            return $"{Nev1} {NapiDij1} {Tapasztalat}";
+            string foglaltnap = "";
+            for (int i = 0; i < this.FoglaltNapok1.Length; i++)
+            {
+                if (!FoglaltNapok1[i])
+                {
+                    foglaltnap += "\n\tszabad";
+                }
+                else
+                {
+                    foglaltnap += "\n\tfoglalt";
+                }
+            }
+            return $"{Nev1} {NapiDij1} {Tapasztalat} {foglaltnap}";
         }
         public override bool MunkatVallal(int number)
         {

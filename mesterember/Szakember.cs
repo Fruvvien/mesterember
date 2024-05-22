@@ -31,8 +31,15 @@ namespace mesterember
 
                     if (tipus == "Burkoló")
                     {
-                        Helyszin szakterulet = (Helyszin)Enum.Parse(typeof(Helyszin), adatok[3], true);
-                        mesterembers.Add(new Burkolo(nev, napiDij, szakterulet));
+                        if (adatok[3] == "Belso")
+                        {
+                            mesterembers.Add(new Burkolo(nev, napiDij, Helyszin.Belso));
+                        }
+                        else if (adatok[3] == "Kulso")
+                        {
+                            mesterembers.Add(new Burkolo(nev, napiDij, Helyszin.Kulso));
+                        }
+                        
                     }
                     else if (tipus == "VízvezetékSzerelő")
                     {
@@ -74,7 +81,7 @@ namespace mesterember
             burkolo.MunkatVallal(8);
             burkolo.MunkatVallal(12);
 
-            Console.WriteLine(burkolo.ToString() + "\nSzabad napjai: " + burkolo.OsszesSzabadnap());
+            Console.WriteLine(burkolo.ToString() + $"\n{burkolo.Nev1} Szabad napjai: " + burkolo.OsszesSzabadnap());
             
 
         }

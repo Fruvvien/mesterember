@@ -12,7 +12,7 @@ namespace mesterember
         {
             Szakember szakember = new Szakember();
             szakember.FajlBeolvasas("szakember.txt");
-           // szakember.Kiiratas();
+            szakember.Kiiratas();
             szakember.Szimulacio();
         }
     }
